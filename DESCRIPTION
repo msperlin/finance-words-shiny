@@ -1,0 +1,31 @@
+Package: fdapp
+Title: PKG_TITLE
+Version: 0.0.0.9000
+Authors@R: person('Leon', 'Ramos', email = 'leon@finor.tech', role = c('cre', 'aut'))
+Description: PKG_DESC.
+License: What license is it under?
+Imports: 
+    config (>= 0.3.1),
+    DBI,
+    digest,
+    dplyr,
+    fontawesome,
+    golem (>= 0.3.1),
+    htmltools,
+    jsonlite,
+    magrittr,
+    odbc,
+    pkgload,
+    RPostgres,
+    shiny (>= 1.7.1),
+    shinyWidgets
+Depends: bs4Dash
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.2
+Suggests: 
+    rmarkdown,
+    knitr,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+VignetteBuilder: knitr

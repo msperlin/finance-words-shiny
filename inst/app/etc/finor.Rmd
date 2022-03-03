@@ -1,0 +1,12 @@
+---
+title: "Finor"
+author: "Marcos Reichert"
+date: "11/01/2022"
+output: html_document
+---
+
+## Finor
+
+Finor - Data Science for Finance
+
+
