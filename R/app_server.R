@@ -5,6 +5,7 @@
 #' @import shiny, bs4Dash
 #' @noRd
 app_server <- function( input, output, session ) {
+  
   # Your application server logic
   con <- connect_db()
   sample_words <- random_words(con)
@@ -13,22 +14,20 @@ app_server <- function( input, output, session ) {
   user_ip <- reactive({digest::digest(input$ip, 
                                       algo="sha256", 
                                       serialize=FALSE)})
-  wrd <- reactive({sample_words[index(), 1]}) 
-  wrd_index <- reactive({sample_words[index(), 2]})
+  wrd <- reactive({sample_words[index(), 2]}) 
+  wrd_index <- reactive({sample_words[index(), 1]})
   choice <- reactive({input$voto})
   output$control <- reactive({index()})
   output$end_vector <- reactive({end_val()})
   
-  
   outputOptions(output, "control", suspendWhenHidden = FALSE)
   outputOptions(output, "end_vector", suspendWhenHidden = FALSE)
   
-  browser()
   output$progressbar <- renderUI({
     shinyWidgets::progressBar(
       id = "pb1",
       value = index()-1,
-      total = length(sample_words),
+      total = nrow(sample_words),
       status = "info",
       display_pct = F,
       striped = TRUE)
@@ -52,8 +51,8 @@ app_server <- function( input, output, session ) {
     #captando o voto
     req(choice())
     vote_index <- vote_id(choice())
-    #enviando para o blob
-    send_to_db(con, user_ip(), wrd_index(), vote_index)
+    #enviando para o db
+    send_to_db(con, user_ip(), wrd(), vote_index)
     # #incrementando reactiveVal para escolher a próxima palavra
     index(index() + 1)
   })
