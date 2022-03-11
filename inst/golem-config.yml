@@ -2,7 +2,7 @@ default:
   golem_name: fdapp
   golem_version: 0.0.0.9000
   app_prod: no
-  f_db: "/home/msperlin/db-words-sent/db_words.sqlite"  
+  f_db: "~/db-words-sent/db_words.sqlite"  
 production:
   app_prod: yes
 dev:
