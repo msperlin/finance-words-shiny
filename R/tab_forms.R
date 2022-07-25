@@ -103,27 +103,27 @@ tab_forms <- bs4Dash::tabItem(
         style = "unite", 
         color = "danger")
     ),
-    column(
-      width = 1,
-      conditionalPanel(
-        condition = paste("output.control ==", get_nwords+1, "&& output.end_vector == 1"),
-        shinyWidgets::actionBttn(
-          inputId = "yesbutton",
-          label = "Sim",
-          style = "unite",
-          color = "royal")
-      )),
-    column(
-      width = 1,
-      conditionalPanel(
-        condition = paste("output.control ==", get_nwords+1, "&& output.end_vector == 1"),
-        shinyWidgets::actionBttn(
-          inputId = "nobutton",
-          label = "Não",
-          style = "unite",
-          color = "success")
-        )
-      )
+    # column(
+    #   width = 1,
+    #   conditionalPanel(
+    #     condition = paste("output.control ==", get_nwords+1, "&& output.end_vector == 1"),
+    #     shinyWidgets::actionBttn(
+    #       inputId = "yesbutton",
+    #       label = "Sim",
+    #       style = "unite",
+    #       color = "royal")
+    #   )),
+    # column(
+    #   width = 1,
+    #   conditionalPanel(
+    #     condition = paste("output.control ==", get_nwords+1, "&& output.end_vector == 1"),
+    #     shinyWidgets::actionBttn(
+    #       inputId = "nobutton",
+    #       label = "Não",
+    #       style = "unite",
+    #       color = "success")
+    #     )
+    #   )
     ),
   fluidRow(
     tags$script('

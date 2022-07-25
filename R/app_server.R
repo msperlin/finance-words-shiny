@@ -58,7 +58,7 @@ app_server <- function( input, output, session ) {
   })
   
   output$checkpointquestion <- renderText({
-    "Deseja continuar a votação?"
+    "Obrigado por votar! Aperte f5 para votar novamente."
   })
   
   observeEvent(input$yesbutton, {

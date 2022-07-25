@@ -41,7 +41,7 @@ random_words <- function(con){
 
 get_words <- function() {
   #f_csv <- app_sys("app/data/palavras_teste.csv")
-  f_csv <- app_sys("app/data/youtubewords.csv")
+  f_csv <- app_sys("app/data/formalwords.csv")
 
   df_words = readr::read_csv(f_csv, col_names = "word",
                              show_col_types = FALSE)
