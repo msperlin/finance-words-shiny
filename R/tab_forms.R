@@ -9,6 +9,7 @@ tab_forms <- bs4Dash::tabItem(
            bs4Dash::box(width = 12,
                         title = "Sobre",
                         icon = icon('circle-info'),
+                        collapsible = F,
                         includeHTML(app_sys('app/html/about.html'))
            )
     )
