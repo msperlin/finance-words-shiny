@@ -2,24 +2,33 @@ vote_options <- data.frame(voto = c("Negativa", "Neutra", "Positiva"),
                            voto_id = c(1, 2, 3))
 get_nwords <- 15
 
-tab_forms<- bs4Dash::tabItem(
+tab_forms <- bs4Dash::tabItem(
   tabName = "forms",
   fluidRow(
     column(width = 8,
-           htmltools::img(src = 'www/logo2.png',
-                   href = 'https://finor.tech/en',
-                   height='50px',
-                   align = 'left')
+           bs4Dash::box(width = 12,
+                        title = "Sobre",
+                        icon = icon('circle-info'),
+                        includeHTML(app_sys('app/html/about.html'))
            )
+    )
+           # htmltools::img(src = 'www/logo2.png',
+           #         href = 'https://finor.tech/en',
+           #         height='50px',
+           #         align = 'left')
+           # )
     ),
   br(),
   bs4Dash::box(
-    width = 12,
+    title = "Votação",
+    icon = icon("clipboard"),
+    width = 8,
     collapsible = F,
     headerBorder = F,
     fluidRow(
       column(
         8,
+        br(),
         #in serverside
         uiOutput("progressbar")
         ),
@@ -33,7 +42,7 @@ tab_forms<- bs4Dash::tabItem(
   
   fluidRow(
     column(
-      width = 12,
+      width = 8,
       conditionalPanel(
         condition = paste("output.control <", get_nwords+1),
         bs4Dash::box(

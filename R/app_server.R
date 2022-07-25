@@ -12,8 +12,8 @@ app_server <- function( input, output, session ) {
   index <- reactiveVal(1)
   end_val <- reactiveVal(1)
   user_ip <- reactive({digest::digest(input$ip, 
-                                      algo="sha256", 
-                                      serialize=FALSE)})
+                                      algo = "sha256", 
+                                      serialize = FALSE)})
   wrd <- reactive({sample_words[index(), 2]}) 
   wrd_index <- reactive({sample_words[index(), 1]})
   choice <- reactive({input$voto})
@@ -35,7 +35,7 @@ app_server <- function( input, output, session ) {
   
   output$infobox <- renderUI({
     bs4Dash::infoBox(
-      title = "Palavras\n Respondidas",
+      title = "Respostas",
       value = index()-1,
       color = 'info',
       fill = TRUE,
@@ -67,7 +67,7 @@ app_server <- function( input, output, session ) {
   
   observeEvent(input$nobutton,{
     end_val(end_val()+ 1)
-    })
+  })
   
   output$thanks <- renderText({
     "Obrigado!"

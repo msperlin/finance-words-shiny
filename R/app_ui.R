@@ -30,17 +30,17 @@ app_ui <- function(request) {
             "Questionário",
             tabName = "forms",
             icon = icon("sliders-h")
-          ),
-          menuItem(
-            "Sobre o Dicionário",
-            tabName = "dictionary",
-            icon = icon("id-card")
-          ),
-          menuItem(
-            "Finor",
-            tabName = "finor",
-            icon = icon("tint")
-          )
+          ) #,
+          # menuItem(
+          #   "Sobre o Dicionário",
+          #   tabName = "dictionary",
+          #   icon = icon("id-card")
+          # ) ,
+          # menuItem(
+          #   "Finor",
+          #   tabName = "finor",
+          #   icon = icon("tint")
+          # )
         )
       ),
       
